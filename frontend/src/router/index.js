@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import IndexView from '@/components/IndexView.vue'
 import AsesoriaView from '@/components/AsesoriaView.vue'
 
+
+
 const routes = [
   {
     path: '/',
