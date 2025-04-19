@@ -1,25 +1,20 @@
-<!-- src/components/IndexView.vue -->
 <template>
   <div class="page-wrapper">
     <div class="index-container">
-      <!-- Sección Izquierda: Logo, Título, Subtítulo, Botón -->
       <div class="left-section">
         <div class="logo-container">
           <img src="@/assets/logo.png" alt="Logo Universidad de Talca" class="logo" />
         </div>
-
         <div class="content-wrapper">
           <div class="content">
             <h1 class="welcome-title">¡Bienvenido!</h1>
             <p class="subtitle">Prueba nuestro nuevo sistema de reservas de laboratorios</p>
-
             <button class="start-button" @click="irAsesoria">EMPIEZA AQUÍ</button>
           </div>
         </div>
       </div>
-
-      <!-- Sección Derecha: Imagen del laboratorio -->
-      <div class="right-section"></div>
+      <div class="right-section">
+      </div>
     </div>
   </div>
 </template>
@@ -36,7 +31,6 @@ export default {
 </script>
 
 <style scoped>
-/* Contenedor para centrar y posicionar a la derecha */
 .page-wrapper {
   display: flex;
   min-height: 100vh;
@@ -44,13 +38,14 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: #f5f5f5;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Contenedor principal con diseño de browser window */
 .index-container {
   display: flex;
   min-height: 600px;
-  width: 70%;
+  width: 100%;
   max-width: 1200px;
   background-color: #fff;
   position: relative;
@@ -59,29 +54,13 @@ export default {
   border-radius: 8px;
 }
 
-/* Estilos para simular una ventana de navegador */
-.index-container::before {
-  content: "••••";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 8px 16px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ddd;
-  color: #666;
-  font-size: 14px;
-  letter-spacing: 3px;
-}
-
-/* Sección izquierda con espaciado mejorado */
 .left-section {
   flex: 1;
-  padding: 0;
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  position: relative;
+  z-index: 1;
+  min-width: 50%;
 }
 
 .logo-container {
@@ -100,7 +79,7 @@ export default {
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
-  margin: 0 20px 110px;
+  margin: 0 20px 80px;
 }
 
 .content {
@@ -129,9 +108,8 @@ export default {
   font-family: 'Arial', sans-serif;
 }
 
-/* Botón más elegante con colores */
 .start-button {
-  background-color: #1e88e5; /* Azul profesional */
+  background-color: #1e88e5; 
   color: #fff;
   padding: 14px 28px;
   font-size: 1.1rem;
@@ -159,64 +137,115 @@ export default {
   box-shadow: 0 2px 8px rgba(30, 136, 229, 0.3);
 }
 
-/* Sección derecha con imagen de laboratorio */
 .right-section {
   flex: 1;
-  height: 100%; /* Asegura que ocupe todo el alto del contenedor padre */
   background-image: url("@/assets/laboratorio2.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute; /* Añade posición absoluta */
-  right: 0; /* Lo posiciona a la derecha */
-  top: 0; /* Lo alinea desde arriba */
-  width: 50%; /* Asegura que tome la mitad del ancho */
+  min-width: 50%;
 }
 
-/* Media query para dispositivos móviles */
+/* Tablet and smaller devices */
 @media (max-width: 990px) {
   .index-container {
-    width: 90%;
     flex-direction: column;
-    min-height: 700px;
+    min-height: auto;
+  }
+  
+  .left-section, .right-section {
+    min-width: 100%;
+  }
+  
+  .left-section {
+    order: 2;
+    padding-top: 20px;
+    padding-bottom: 40px;
   }
   
   .right-section {
-    min-height: 40vh;
+    order: 1;
+    min-height: 300px;
+  }
+  
+  .logo-container {
+    padding: 20px 0 10px 20px;
   }
   
   .content-wrapper {
-    padding: 20px 15px 40px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
   }
   
   .content {
-    padding: 25px 20px;
+    max-width: 100%;
   }
   
   .welcome-title {
     font-size: 2.5rem;
   }
-  
-  .logo-container {
-    padding: 50px 0 10px;
-    display: flex;
-    justify-content: center;
-  }
 }
 
-/* Para pantallas muy pequeñas */
-@media (max-width: 480px) {
+/* Mobile devices */
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding: 10px;
+  }
+
+  .index-container {
+    border-radius: 6px;
+  }
+  
+  .right-section {
+    min-height: 200px;
+  }
+  
+  .logo-container {
+    padding: 15px 0 5px 15px;
+  }
+  
+  .logo {
+    width: 90px;
+  }
+  
+  .content-wrapper {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    padding: 20px 15px;
+  }
+  
   .welcome-title {
     font-size: 2rem;
+    margin-bottom: 15px;
   }
   
   .subtitle {
     font-size: 1rem;
+    margin-bottom: 25px;
   }
   
   .start-button {
     padding: 12px 20px;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .welcome-title {
+    font-size: 1.8rem;
+  }
+  
+  .content {
+    padding: 15px 10px;
+  }
+  
+  .right-section {
+    min-height: 150px;
   }
 }
 </style>
