@@ -1,15 +1,7 @@
 <template>
     <div class="asesoria-container">
       <div class="gray-banner">
-        <header class="header">
-          <img
-            src="@/assets/logo.png"
-            alt="Logo UTalca"
-            class="logo-placeholder"
-            @click="irIndex"
-          />
-          <div class="nombre-estudiante">Mateo Palacios</div>
-        </header>
+      
       </div>
   
       <h2>Asesoría en Laboratorio</h2>
@@ -153,10 +145,7 @@
           this.mensajeExito = ''
         }
       },
-      // Redirige a la primera vista (ruta raíz)
-      irIndex() {
-        this.$router.push('/')
-      }
+     
     }
   }
   </script>
@@ -178,19 +167,13 @@
     margin-bottom: 1rem;
   }
   
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+ 
   .logo-placeholder {
     width: 120px;
     height: auto;
     cursor: pointer; /* Indica que es clickeable */
   }
-  .nombre-estudiante {
-    font-weight: bold;
-  }
+
   
   /* Título y subtítulo centrados */
   h2 {
