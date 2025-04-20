@@ -9,7 +9,7 @@
           <div class="content">
             <h1 class="welcome-title">¡Bienvenido!</h1>
             <p class="subtitle">Prueba nuestro nuevo sistema de reservas de laboratorios</p>
-            <button class="start-button" @click="irAsesoria">EMPIEZA AQUÍ</button>
+            <button class="start-button" @click="irLogin">EMPIEZA AQUÍ</button>
           </div>
         </div>
       </div>
@@ -23,8 +23,8 @@
 export default {
   name: 'IndexView',
   methods: {
-    irAsesoria() {
-      this.$router.push('/asesoria')
+    irLogin() {
+      this.$router.push({ name: 'login' })
     }
   }
 }
@@ -64,12 +64,16 @@ export default {
 }
 
 .logo-container {
-  padding: 50px 0 20px 40px;
+  /* Cambiar de padding a margin y centrar */
+  margin: 50px auto 20px;
+  text-align: center;
 }
 
 .logo {
   width: 110px;
   height: auto;
+  /* Añadir margin-bottom para separación consistente */
+  margin-bottom: 0px;
 }
 
 .content-wrapper {
@@ -77,9 +81,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px;
-  margin: 0 20px 80px;
+  margin: 0 auto 80px; 
 }
 
 .content {
@@ -90,6 +94,7 @@ export default {
   max-width: 400px;
   width: 100%;
   text-align: center;
+  margin: 0 auto;
 }
 
 .welcome-title {
@@ -97,7 +102,7 @@ export default {
   font-weight: 700;
   margin-bottom: 20px;
   color: #000;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .subtitle {
@@ -105,11 +110,11 @@ export default {
   margin-bottom: 35px;
   line-height: 1.6;
   color: #444;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .start-button {
-  background-color: #1e88e5; 
+  background-color: #d30101; 
   color: #fff;
   padding: 14px 28px;
   font-size: 1.1rem;
@@ -127,7 +132,7 @@ export default {
 }
 
 .start-button:hover {
-  background-color: #1565c0;
+  background-color: #da1d1d;
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(30, 136, 229, 0.4);
 }
@@ -139,7 +144,7 @@ export default {
 
 .right-section {
   flex: 1;
-  background-image: url("@/assets/laboratorio2.png");
+  background-image: url("@/assets/laboratorio3.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
