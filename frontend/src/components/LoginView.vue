@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'LoginView',
   data() {
@@ -70,8 +71,23 @@ export default {
     }
   },
   methods: {
-    onLogin() {
-      console.log('Usuario:', this.usuario, 'Contraseña:', this.password);
+    async onLogin() {
+      try {
+        const response = await axios.post('http://localhost:3000/api/auth/login', {
+          usuario: this.usuario,
+          contraseña: this.password
+        });
+        if (response.data.success) {
+          // Redirigir a la página principal o dashboard
+          this.$router.push('/dashboard');
+        } else {
+          alert('Credenciales incorrectas. Intenta nuevamente.');
+        }
+      } catch (error) {
+        console.error('Error en el inicio de sesión:', error);
+        alert('Error en el inicio de sesión. Por favor, intenta nuevamente.');
+      }
+      
     },
     irRegistro() {
       this.$router.push('/registro')
