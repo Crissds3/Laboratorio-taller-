@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import IndexView from '@/components/IndexView.vue'
-import AsesoriaView from '@/components/AsesoriaView.vue'
+import LoginView from '@/components/LoginView.vue'    
+import RegistroView from '@/components/RegistroView.vue'
 
 
 
@@ -11,9 +12,14 @@ const routes = [
     component: IndexView
   },
   {
-    path: '/asesoria',
-    name: 'Asesoria',
-    component: AsesoriaView
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '/registro',
+    name: 'registro',
+    component: RegistroView
   }
 ]
 
