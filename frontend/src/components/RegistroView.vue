@@ -26,13 +26,13 @@
               </div>
               
               <div class="form-group">
-                <label for="apellido">APELLIDO</label>
+                <label for="rut">RUT</label>
                 <div class="input-with-icon">
                   <i class="fas fa-user"></i>
                   <input
-                    id="apellido"
+                    id="rut"
                     type="text"
-                    v-model="apellido"
+                    v-model="rut"
                     required
                   />
                 </div>
@@ -111,12 +111,13 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'RegistroView',
   data() {
     return {
       nombre: '',
-      apellido: '',
+      rut: '',
       correo: '',
       confirmarCorreo: '',
       password: '',
@@ -124,7 +125,7 @@ export default {
     }
   },
   methods: {
-    onRegistro() {
+    async onRegistro() {
       if (this.correo !== this.confirmarCorreo) {
         alert('Los correos electrónicos no coinciden');
         return;
@@ -135,14 +136,21 @@ export default {
         return;
       }
       
-      console.log('Formulario enviado:', {
-        nombre: this.nombre,
-        apellido: this.apellido,
-        correo: this.correo,
-        password: this.password
-      });
-      
-      // Aquí iría la lógica para enviar los datos al servidor
+      // Enviar datos al servidor
+      try {
+        const response = await axios.post('http://localhost:3000/api/auth/register', {
+          nombre: this.nombre,
+          usuario: this.rut,
+          correo: this.correo,
+          contraseña: this.password
+        });
+        console.log('Registro exitoso:', response.data);
+        
+        this.$router.push('/login');
+      } catch (error) {
+        console.error('Error en el registro:', error.response || error);
+        alert('Error al registrar usuario. Por favor, intente nuevamente.');
+      }
     }
   }
 }
