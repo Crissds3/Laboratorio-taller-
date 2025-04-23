@@ -21,7 +21,7 @@
                   id="usuario"
                   type="text"
                   v-model="usuario"
-                  placeholder="21295542"
+                  placeholder="20.123.456-7"
                   required
                 />
               </div>
