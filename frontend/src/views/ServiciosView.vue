@@ -9,22 +9,26 @@
       <h2 class="subtitulo">Ingresar Solicitud de la impresión...</h2>
   
       <section class="servicios">
-        <div class="servicio-card">
-     
-          <h3>Impresión 3D</h3>
-          <p>
-            Solicitar impresión de tus diseños 3D con tus descripciones o archivos de impresión
-          </p>
-        </div>
-  
-        <div class="servicio-card">
-          
-          <h3>Asesorías</h3>
-          <p>
-            Reservar una hora en nuestro laboratorio para analizar tus desafíos y recibir asesoramiento profesional
-          </p>
-        </div>
-      </section>
+  <button class="servicio-card impresion" @click="$router.push('/impresion')">
+    <div class="info">
+      <h2>Impresión 3D</h2>
+      <p>
+        Solicitar impresión de tus diseños 3D con tus descripciones o archivos de impresión
+      </p>
+    </div>
+    <div class="imagen"></div>
+  </button>
+
+  <button class="servicio-card asesoria" @click="$router.push('/asesoria')">
+    <div class="info">
+      <h2>Asesorías</h2>
+      <p>
+        Reservar una hora en nuestro laboratorio para analizar tus desafíos y recibir asesoramiento profesional
+      </p>
+    </div>
+    <div class="imagen"></div>
+  </button>
+</section>
   
       <div class="quienes-somos">
         <button class="btn-somos">¿Quiénes somos?</button>
@@ -75,12 +79,65 @@
   }
   
   .servicio-card {
-    background: #f5f5f5;
-    padding: 1.5rem;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 10px;
+  width: 250px;
+  height: 350px; /* Define una altura fija para las tarjetas */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none; /* Elimina el borde del botón */
+  cursor: pointer; /* Cambia el cursor a "pointer" */
+  display: flex;
+  flex-direction: column; /* Organiza el contenido en columnas */
+  overflow: hidden;
+}
+
+.servicio-card .info {
+  padding: 1rem;
+  text-align: center;
+  flex: 1; /* Ocupa el espacio disponible en la parte superior */
+}
+
+.servicio-card .info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.servicio-card .info p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.servicio-card .imagen {
+  height: 150px; /* Define la altura de la imagen */
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  
+}
+
+/* Imagen específica para la tarjeta de impresión */
+.servicio-card.impresion .imagen {
+  background-image: url('@/assets/impresion3d.png'); /* Cambia esta URL por la imagen deseada */
+}
+
+/* Imagen específica para la tarjeta de asesorías */
+.servicio-card.asesoria .imagen {
+  background-image: url('@/assets/asesorias.png'); /* Cambia esta URL por la imagen deseada */
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px); /* Mueve la tarjeta hacia arriba */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+.servicio-card:hover .imagen {
+  transform: scale(1.1); /* Amplía ligeramente la imagen al pasar el cursor */
+  filter: blur(4px);
+}
   
   .icono {
     width: 100px;
