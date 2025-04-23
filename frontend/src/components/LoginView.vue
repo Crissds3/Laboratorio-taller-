@@ -53,8 +53,8 @@
         </div>
         
         <div class="admin-access">
-          <a href="/admin" class="admin-button">Acceso ADMIN</a>
-        </div>
+  <a href="http://localhost:3001/Services/UTALCAPASS/inter.php" class="admin-button">Acceso ADMIN</a>
+</div>
       </div>
     </div>
   </div>
