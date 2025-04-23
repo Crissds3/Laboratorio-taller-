@@ -23,7 +23,7 @@
         $_SESSION['sso'] = true;
         /*-------------------------*/ 
         /* Link de página de inicio sistema a loguear - Modificable*/
-       header("location:https://huemultest.utalca.cl/tst/testapi.php");
+       header("location:http://localhost:8080/servicios");
         /* ------------------------------------------ */
     }
 
