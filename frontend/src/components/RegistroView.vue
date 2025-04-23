@@ -20,6 +20,7 @@
                     id="nombre"
                     type="text"
                     v-model="nombre"
+                    placeholder="Juan Pérez"
                     required
                   />
                 </div>
@@ -34,6 +35,7 @@
                     type="text"
                     v-model="rut"
                     required
+                    placeholder="20.123.456-7"
                   />
                 </div>
               </div>
@@ -78,6 +80,7 @@
                     id="password"
                     type="password"
                     v-model="password"
+                    placeholder="******"
                     required
                   />
                 </div>
