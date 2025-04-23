@@ -145,7 +145,7 @@ export default {
 }
 
 .login-form-container {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding: 30px;
 }
 
@@ -267,7 +267,7 @@ export default {
 }
 
 .external-access {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin-top: 25px;
   text-align: center;
   font-size: 0.85rem;
@@ -275,7 +275,7 @@ export default {
 }
 
 .here-link {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #df4a4a;
   text-decoration: none;
   font-weight: 600;
@@ -288,7 +288,7 @@ export default {
 }
 
 .admin-access {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
   position: absolute;
   top: 15px;
   right: 15px;
