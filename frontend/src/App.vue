@@ -20,7 +20,7 @@ export default {
     const route = useRoute()
 
     // Aquí defines las rutas donde NO quieres que aparezca la navbar
-    const noNavbarRoutes = ['/login', '/']
+    const noNavbarRoutes = ['/login', '/', '/registro']
 
     const showNavbar = computed(() => !noNavbarRoutes.includes(route.path))
 
@@ -32,6 +32,7 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 body {
   margin: 0;
   font-family: Arial, sans-serif;
