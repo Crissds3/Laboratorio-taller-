@@ -79,7 +79,7 @@ export default {
         });
         if (response.data.success) {
           // Redirigir a la página principal o dashboard
-          this.$router.push('/dashboard');
+          this.$router.push('/servicios');
         } else {
           alert('Credenciales incorrectas. Intenta nuevamente.');
         }

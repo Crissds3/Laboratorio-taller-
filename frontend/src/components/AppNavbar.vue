@@ -11,6 +11,7 @@
         <li><router-link to="/">Inicio</router-link></li>
         <li><router-link to="/servicios">Servicios</router-link></li>
         <li><router-link to="/asesoria">Asesoría</router-link></li>
+        <li><router-link to="/impresion">Impresion</router-link></li>
         
         
       </ul>
