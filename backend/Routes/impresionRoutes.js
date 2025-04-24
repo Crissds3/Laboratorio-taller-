@@ -1,6 +1,6 @@
 const express = require('express');
 const ImpresionController = require('../Controllers/ImpresionController');
-const impressionService = require('../Services/ImpressionService'); // Asegúrate de que este servicio exista
+const impressionService = require('../Services/ImpresionService'); // Asegúrate de que este servicio exista
 
 const router = express.Router();
 const impresionController = new ImpresionController(impressionService);
