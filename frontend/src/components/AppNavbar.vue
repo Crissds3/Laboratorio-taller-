@@ -11,11 +11,15 @@
         <li><router-link to="/">Inicio</router-link></li>
         <li><router-link to="/servicios">Servicios</router-link></li>
         <li><router-link to="/asesoria">Asesoría</router-link></li>
-        
-        
+        <li><router-link to="/impresion">Impresion</router-link></li>
       </ul>
     </div>
-    <div class="nombre-estudiante">Mateo Palacios</div>
+    <div class="user-actions">
+      <div class="nombre-estudiante">Mateo Palacios</div>
+      <a href="http://localhost:3001/Services/UTALCAPASS/logout.php" class="logout-button">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+      </a>
+    </div>
   </nav>
 </template>
 
@@ -33,13 +37,14 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
+  justify-content: space-between; /* Distribuye el espacio entre el contenido y las acciones de usuario */
 }
 
 .navbar-content {
   display: flex;
   align-items: center;
   justify-content: center; /* Centra los enlaces horizontalmente */
-  width: 100%;
+  flex-grow: 1; /* Permite que el contenido central ocupe el espacio disponible */
 }
 
 .logo {
@@ -68,7 +73,38 @@ export default {
 .nav-links a:hover {
   color: #00bcd4; /* Cambia el color al pasar el cursor */
 }
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nombre-estudiante {
-    font-weight: bold;
-  }
+  font-weight: bold;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.logout-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #d30101;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #d30101;
+  color: #ffffff;
+}
+
+.logout-button i {
+  margin-right: 6px;
+}
 </style>

@@ -4,6 +4,8 @@ import LoginView from '@/components/LoginView.vue'
 import RegistroView from '@/components/RegistroView.vue'
 import AsesoriaView from '@/components/AsesoriaView.vue'
 import ServiciosView from '@/views/ServiciosView.vue'
+import ImpresionView from '@/views/ImpresionView.vue'
+
 
 const routes = [
   {
@@ -29,7 +31,12 @@ const routes = [
   {path: '/servicios',
     name: 'Servicios',
     component: ServiciosView
+  },
+  {path: '/impresion',
+    name: 'impresion',
+    component: ImpresionView
   }
+
 ]
 
 const router = createRouter({
